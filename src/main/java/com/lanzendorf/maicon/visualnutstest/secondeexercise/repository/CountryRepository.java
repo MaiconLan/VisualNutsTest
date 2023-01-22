@@ -29,7 +29,7 @@ public class CountryRepository {
             throw new DataNotFoundException();
 
         try {
-            return objectMapper.readValue(resource.getFile(), new TypeReference<>() { });
+            return objectMapper.readValue(resource.getInputStream(), new TypeReference<>() { });
         } catch (IOException e) {
             throw new DataNotFoundException(e);
         }
